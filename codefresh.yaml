@@ -3,6 +3,8 @@ steps:
   build:
     type: build
     image_name: bevyx/demo-bookinfo-ratings
+    build_arguments:
+      - service_version=${{CF_BRANCH_TAG_NORMALIZED}}
     working_directory: ./
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
   push:
